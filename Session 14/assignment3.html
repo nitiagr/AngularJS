@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>Assignment 3 </title>
+    <script src="angular.js"></script>    
+    <script>
+    var module = angular.module("sampleApp", []);
+        
+        module.controller('myCntrl',function($scope,userFactory){
+            $scope.user = userFactory;
+            
+                          
+        });
+    
+        module.factory('userFactory',function(){
+            var user = {
+               name:"ABCD", age:30,id:1001,salary:10000
+            }
+            
+           return user;
+        });
+    </script>
+</head>
+
+<body ng-app="sampleApp">
+     <div class="container" ng-controller="myCntrl">
+         Using Factory:
+         <table border="1">
+            <tr><td> {{user.name}}</td><td>{{user.age}}</td><td>{{user.id}}</td><td>{{user.salary}}</td></tr>
+          
+         </table>
+        
+
+     </div>
+</body>
+</html>

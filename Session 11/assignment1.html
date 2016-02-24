@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myModule">
+<head>
+	<title>Angular Directives</title>
+	<meta charset="UTF-8" />
+	<script src="angular.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	var myModule = angular.module('myModule', []);
+	myModule.controller('MyCtrl', function ($scope) {
+		$scope.name = "Niti";
+        $scope.empid="101";
+        $scope.designation="sw Engineer";
+		});
+	</script>
+</head>
+<body>
+	<div> 
+	<div ng-controller="MyCtrl">
+	    <input type="text" ng-model="name"/><br/><br/>
+        <input type="text" ng-model="empid"/><br/><br/>
+        <input type="text" ng-model="designation"/>        
+	</div>
+ </div>
+</body>
+</html>

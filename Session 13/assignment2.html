@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>AngularJS Routes </title>
+    <script src="angular.js"></script>    
+    <script>
+    var module = angular.module("sampleApp", []);
+        
+        module.controller('myCntrl',function($scope,userService){
+            $scope.user = userService.getUser();
+            userService.setUser({name:"XYZ",age:35,id:1002,salary:20000});
+            $scope.user1 = userService.getUser();
+            
+                          
+        });
+    
+        module.service('userService',function(){
+            var user = {
+               name:"ABCD", age:30,id:1001,salary:10000
+            }
+            
+            this.getUser = function(){
+                return user;
+            }
+            this.setUser = function(editUser){
+                user = editUser;
+            }
+        })
+    </script>
+</head>
+
+<body ng-app="sampleApp">
+     <div class="container" ng-controller="myCntrl">
+         <table border="1">
+            <tr><td> {{user.name}}</td><td>{{user.age}}</td><td>{{user.id}}</td><td>{{user.salary}}</td></tr>
+            <tr><td> {{user1.name}}</td><td>{{user1.age}}</td><td>{{user1.id}}</td><td>{{user1.salary}}</td></tr>
+         </table>
+        
+
+     </div>
+</body>
+</html>

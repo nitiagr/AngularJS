@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myModule">
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8" />
+	<script src="angular.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	var myModule = angular.module('myModule', []);
+	myModule.controller('MyCtrl', function ($scope) {
+		$scope.hellotext = "Hello World";	
+        $scope.person={name:'Niti',age:35};
+        $scope.employees=[{name:'abc',id:1},{name:'xyz',id:2}];
+		});
+	</script>
+</head>
+<body>
+	<div> 
+	<div ng-controller="MyCtrl">
+        <input type="text" ng-model="hellotext"/>
+	   <div ng-bind="hellotext"></div>
+       <div ng-show="false">Test Line</div>
+        <div>{{person.name}}</div>
+        <div ng-bind="person.age"></div>
+        <div ng-repeat="emp in employees">
+            {{emp.name}}---{{emp.id}}
+        </div>
+	</div>
+ </div>
+</body>
+</html>
