@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="myModule">
+<head>
+	<title>Assignment 1</title>
+	<meta charset="UTF-8" />
+	<script src="angular.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+        var myModule = angular.module('myModule', []);
+        
+        myModule.controller('MyCtrl', function($scope,empService){
+            $scope.employee = empService.getDetails();                   
+        });          
+       
+        
+        /*Factory return an Object*/
+        myModule.service('empService',function(){            
+            var employee = {name:"ABCD", age:30,id:1001,salary:10000};
+            this.getDetails = function(){
+                return employee;
+            }                               
+        });
+     
+        
+	</script>
+</head>
+<body>
+  <div> 
+	<div ng-controller="MyCtrl">
+        <table border="solid black">
+            <tr><td>Name</td><td>Age</td><td>Id</td><td>Salary</td></tr>
+            <tr><td>{{employee.name}}</td><td>{{employee.age}}</td><td>{{employee.id}}</td><td>{{employee.salary}}</td></tr>
+        </table>
+        
+	</div>   
+ </div>
+</body>
+</html>
