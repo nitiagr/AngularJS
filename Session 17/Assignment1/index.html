@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myModule">
+<head>
+	<title>Assignment 1</title>
+	<meta charset="UTF-8" />
+	<script src="angular.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+        var myModule1 = angular.module('myModule', []);
+        myModule1.controller("MyCtrl",function($scope,$http){            
+            $http.get('sessions.json').success(function(res){               
+                $scope.contents = res["sessions"];                  
+            });
+        });          
+	</script>
+</head>
+<body>
+ <div> 	        
+    <div ng-controller="MyCtrl">
+       Three Sessoins are:
+        <p ng-repeat="content in contents" value="{{content}}">
+                {{content.name}}<br> Date: {{content.date}},Time {{content.time}} <br>
+            Address:{{content.address}},{{content.city}},{{content.pincode}}<br>
+        </p>
+	</div>
+  </div>
+</body>
+</html>

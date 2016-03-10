@@ -1,0 +1,28 @@
+{ 
+    "sessions":[
+        {
+        "name": "Session name 1",
+        "date":"02/05/2016",
+        "time":"10:00 AM",
+        "address":"sarjapura road",
+        "city": "Sample address 1",        
+        "pincode":560102            
+        },
+        {
+        "name": "Session name 2",
+        "date":"02/05/2016",
+        "time":"12:00 PM",
+        "address":"sarjapura road",
+        "city": "Sample address 2",       
+        "pincode":"560102"        
+        },
+        {
+        "name": "Session name 3",
+        "date":"02/05/2016",
+        "time":"03:00 PM",
+        "address":"sarjapura road",
+        "city": "Sample address 3",       
+        "pincode":"560102"
+        }
+    ]
+}
